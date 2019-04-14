@@ -6,7 +6,7 @@ use professionalweb\LMS\Blog\Actions\Local\StoreBlog;
 use professionalweb\LMS\Blog\Actions\Local\RemoveBlog;
 use professionalweb\LMS\Blog\Actions\Local\UpdateBlog;
 use professionalweb\LMS\Blog\Actions\Local\GetBlogList;
-use professionalweb\LMS\Blog\Repositories\BlogRepository;
+use professionalweb\LMS\Blog\Repositories\Local\BlogRepository;
 use professionalweb\LMS\Blog\Transformers\BlogTransformer;
 use professionalweb\LMS\Blog\Interfaces\Actions\GetBlog as IGetBlog;
 use professionalweb\LMS\Blog\Actions\Remote\GetBlog as GetBlogRemote;
@@ -45,7 +45,7 @@ class PackageProvider extends ServiceProvider
             $this->app->bind(IGetBlogList::class, GetBlogList::class);
         }
 
-        $this->app->bind(IBlogRepository::class, BlogRepository::class);
+        $this->app->singleton(IBlogRepository::class, BlogRepository::class);
         $this->app->singleton(IBlogTransformer::class, BlogTransformer::class);
     }
 }

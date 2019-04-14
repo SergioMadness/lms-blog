@@ -94,7 +94,7 @@ class BlogControllerTest extends TestCase
 
         $this->mock(BlogRepository::class, function (MockInterface $mock) {
             $mock->shouldReceive('create')->once()->andReturn($this->blogMock);
-            $mock->shouldReceive('save')->once()->andReturn(true);
+            $mock->shouldReceive('save')->once()->andReturn($this->blogMock);
         });
 
         $response = $this->post('/api/v2/b2b/blog', $attributes);
@@ -117,7 +117,7 @@ class BlogControllerTest extends TestCase
         ];
 
         $this->mock(BlogRepository::class, function (MockInterface $mock) {
-            $mock->shouldReceive('save')->once()->andReturn(true);
+            $mock->shouldReceive('save')->once()->andReturn($this->blogMock);
             $mock->shouldReceive('model')->once()->andReturn($this->blogMock);
             $mock->shouldReceive('fill')->once()->andReturn($this->blogMock);
         });
