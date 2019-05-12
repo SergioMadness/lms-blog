@@ -29,6 +29,6 @@ class GetBlogList implements IGetBlogList, WithPagination
         $filter = [];
         $request = $this->getRequest();
 
-        return $this->getBlogRepository()->get($filter, ['name' => 'asc'], $this->getLimit($request), $this->getOffset($request));
+        return $this->getBlogRepository()->get($filter, ['publish_date' => 'desc'], $this->getLimit($request), $this->getOffset($request));
     }
 }
