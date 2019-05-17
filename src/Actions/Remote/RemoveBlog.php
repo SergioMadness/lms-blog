@@ -11,11 +11,11 @@ class RemoveBlog extends StoreBlog implements IRemoveBlog
     /**
      * Set blog id
      *
-     * @param int $id
+     * @param string $id
      *
      * @return IRemoveBlog
      */
-    public function setId(int $id): IRemoveBlog
+    public function setId(string $id): IRemoveBlog
     {
         return $this;
     }

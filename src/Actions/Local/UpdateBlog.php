@@ -75,11 +75,11 @@ class UpdateBlog implements IUpdateBlog
     /**
      * Set blog id
      *
-     * @param int $id
+     * @param string $id
      *
      * @return IUpdateBlog
      */
-    public function setId(int $id): IUpdateBlog
+    public function setId(string $id): IUpdateBlog
     {
         $this->id = $id;
 
@@ -89,9 +89,9 @@ class UpdateBlog implements IUpdateBlog
     /**
      * Get blog id
      *
-     * @return int
+     * @return string
      */
-    public function getId(): int
+    public function getId(): string
     {
         return $this->id;
     }

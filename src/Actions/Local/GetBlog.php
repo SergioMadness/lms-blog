@@ -39,11 +39,11 @@ class GetBlog implements IGetBlog
     /**
      * Set blog id
      *
-     * @param int $id
+     * @param string $id
      *
      * @return IGetBlog
      */
-    public function setId(int $id): IGetBlog
+    public function setId(string $id): IGetBlog
     {
         $this->id = $id;
 
@@ -53,9 +53,9 @@ class GetBlog implements IGetBlog
     /**
      * Get blog id
      *
-     * @return int
+     * @return string
      */
-    public function getId(): int
+    public function getId(): string
     {
         return $this->id;
     }

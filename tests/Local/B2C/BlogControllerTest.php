@@ -31,7 +31,7 @@ class BlogControllerTest extends TestCase
     {
         $this->mock(BlogRepository::class, function (MockInterface $mock) {
             $mock->shouldReceive('get')
-                ->with([], ['name' => 'asc'], WithPagination::PAGINATION_DEFAULT_LIMIT, 0)
+                ->with([], ['publish_date' => 'desc'], WithPagination::PAGINATION_DEFAULT_LIMIT, 0)
                 ->once()
                 ->andReturn(collect([]));
         });

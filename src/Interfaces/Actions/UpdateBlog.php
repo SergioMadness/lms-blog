@@ -11,9 +11,9 @@ interface UpdateBlog extends Action
     /**
      * Set blog id
      *
-     * @param int $id
+     * @param string $id
      *
      * @return UpdateBlog
      */
-    public function setId(int $id): self;
+    public function setId(string $id): self;
 }

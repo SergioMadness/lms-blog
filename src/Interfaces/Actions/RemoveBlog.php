@@ -11,9 +11,9 @@ interface RemoveBlog extends Action
     /**
      * Set blog id
      *
-     * @param int $id
+     * @param string $id
      *
      * @return self
      */
-    public function setId(int $id): self;
+    public function setId(string $id): self;
 }

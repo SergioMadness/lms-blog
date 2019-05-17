@@ -11,11 +11,11 @@ class UpdateBlog extends StoreBlog implements IUpdateBlog
     /**
      * Set blog id
      *
-     * @param int $id
+     * @param string $id
      *
      * @return IUpdateBlog
      */
-    public function setId(int $id): IUpdateBlog
+    public function setId(string $id): IUpdateBlog
     {
         return $this;
     }

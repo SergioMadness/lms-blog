@@ -38,12 +38,12 @@ class BlogController extends Controller
     /**
      * Get single blog
      *
-     * @param int     $id
+     * @param string  $id
      * @param GetBlog $getBlogAction
      *
      * @return mixed
      */
-    public function view(int $id, GetBlog $getBlogAction)
+    public function view(string $id, GetBlog $getBlogAction)
     {
         return response(
             $this->getBlogTransformer()->transform(

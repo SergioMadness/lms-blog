@@ -11,11 +11,11 @@ class GetBlog extends StoreBlog implements IGetBlog
     /**
      * Set blog id
      *
-     * @param int $id
+     * @param string $id
      *
      * @return IGetBlog
      */
-    public function setId(int $id): IGetBlog
+    public function setId(string $id): IGetBlog
     {
         return $this;
     }

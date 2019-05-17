@@ -41,11 +41,11 @@ class RemoveBlog implements IRemoveBlog
     /**
      * Set blog id
      *
-     * @param int $id
+     * @param string $id
      *
      * @return IRemoveBlog
      */
-    public function setId(int $id): IRemoveBlog
+    public function setId(string $id): IRemoveBlog
     {
         $this->blogId = $id;
 
@@ -55,9 +55,9 @@ class RemoveBlog implements IRemoveBlog
     /**
      * Get blog id
      *
-     * @return int
+     * @return string
      */
-    public function getBlogId(): int
+    public function getBlogId(): string
     {
         return $this->blogId;
     }

@@ -11,9 +11,9 @@ interface GetBlog extends Action
     /**
      * Set blog
      *
-     * @param int $id
+     * @param string $id
      *
      * @return GetBlog
      */
-    public function setId(int $id): self;
+    public function setId(string $id): self;
 }
