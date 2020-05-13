@@ -36,7 +36,7 @@ class BlogControllerTest extends TestCase
                 ->andReturn(collect([]));
         });
 
-        $response = $this->get('/api/v2/b2b/blog');
+        $response = $this->get('/api/v2/blog');
 
         $this->assertTrue($response->isSuccessful());
     }
@@ -55,7 +55,7 @@ class BlogControllerTest extends TestCase
                 ->andReturn($this->blogMock);
         });
 
-        $response = $this->get('/api/v2/b2b/blog/' . $id);
+        $response = $this->get('/api/v2/blog/' . $id);
 
         $this->assertTrue($response->isSuccessful());
     }
@@ -74,7 +74,7 @@ class BlogControllerTest extends TestCase
                 ->andReturn(null);
         });
 
-        $response = $this->get('/api/v2/b2b/blog/' . $id);
+        $response = $this->get('/api/v2/blog/' . $id);
 
         $this->assertEquals(404, $response->getStatusCode());
     }
