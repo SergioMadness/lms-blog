@@ -27,6 +27,7 @@ class PackageProvider extends ServiceProvider
     {
         $this->loadRoutesFrom(__DIR__ . '/../routes/api.php');
         $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'Blog');
+        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
     }
 
     public function register(): void
