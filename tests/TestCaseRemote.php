@@ -3,6 +3,7 @@
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use professionalweb\LMS\Common\Exceptions\Handler;
 use professionalweb\LMS\Blog\Providers\PackageProvider;
+use professionalweb\LMS\SAAS\Providers\PackageProvider as SaasPackageProvider;
 use professionalweb\LMS\Common\Providers\PackageProvider as LmsCommonPackageProvider;
 
 /**
@@ -14,7 +15,7 @@ class TestCaseRemote extends \Orchestra\Testbench\TestCase
 
     protected function getPackageProviders($app)
     {
-        return [PackageProvider::class, LmsCommonPackageProvider::class];
+        return [PackageProvider::class, LmsCommonPackageProvider::class, SaasPackageProvider::class];
     }
 
     /**

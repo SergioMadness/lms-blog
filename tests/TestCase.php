@@ -3,6 +3,8 @@
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use professionalweb\LMS\Common\Exceptions\Handler;
 use professionalweb\LMS\Blog\Providers\PackageProvider;
+use professionalweb\LMS\SAAS\Providers\PackageProvider as SaasPackageProvider;
+use professionalweb\LMS\Common\Providers\PackageProvider as CommonPackageProvider;
 
 /**
  * Base test case
@@ -12,7 +14,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 {
     protected function getPackageProviders($app)
     {
-        return [PackageProvider::class];
+        return [PackageProvider::class, SaasPackageProvider::class, CommonPackageProvider::class];
     }
 
     /**

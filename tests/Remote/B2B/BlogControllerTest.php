@@ -1,10 +1,15 @@
 <?php namespace professionalweb\LMS\Blog\Tests\Remote\B2B;
 
+use Ramsey\Uuid\Uuid;
 use Mockery\MockInterface;
 use Illuminate\Http\Request;
+use professionalweb\LMS\SAAS\Models\WebSite;
+use professionalweb\LMS\SAAS\Models\APIClient;
 use professionalweb\LMS\Blog\Tests\TestCaseRemote;
 use professionalweb\LMS\Common\Services\Transport;
 use professionalweb\LMS\Blog\Interfaces\ApiMethods;
+use professionalweb\LMS\Common\Interfaces\Services\DataSigner;
+use professionalweb\LMS\SAAS\Interfaces\Repositories\ClientRepository;
 use professionalweb\LMS\Common\Interfaces\Services\Transport as ITransport;
 
 /**
@@ -13,33 +18,44 @@ use professionalweb\LMS\Common\Interfaces\Services\Transport as ITransport;
  */
 class BlogControllerTest extends TestCaseRemote
 {
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $clientModel = new APIClient();
+        $clientModel->key = 'test';
+        $clientModel->website = new WebSite();
+
+        $this->mock(ClientRepository::class, function (MockInterface $mock) use ($clientModel) {
+            $mock->shouldReceive('model')
+                ->once()
+                ->andReturn($clientModel);
+        });
+        $this->mock(DataSigner::class, function (MockInterface $mock) use ($clientModel) {
+            $mock->shouldReceive('validate')
+                ->once()
+                ->andReturnTrue();
+        });
+    }
+
     /**
      * Index method
      */
     public function testIndex(): void
     {
-        $mockery = \Mockery::mock(Transport::class)
-            ->shouldAllowMockingProtectedMethods()
-            ->makePartial();
+        $url = $this->prepareUrl('/api/v2/b2b' . ApiMethods::API_METHOD_BLOG_LIST . '?client_id=' . Uuid::uuid4() . '&signature=1');
 
-        $url = $this->prepareUrl('/api/v2/b2b' . ApiMethods::API_METHOD_BLOG_LIST);
-        $expectations = $mockery
-            ->shouldReceive('sendRequest')
-            ->with(
-                $url,
-                Request::METHOD_GET,
-                \Mockery::type('array'),
-                \Mockery::type('array')
-            )
-            ->once()
-            ->andReturn(json_encode([]));
-
-        /** @var MockInterface|Transport $mock */
-        $mock = $expectations->getMock();
-
-        $mock->setBaseUrl('')->setClientId('')->setSecretId('');
-
-        $this->instance(ITransport::class, $mock);
+        $this->mock(ITransport::class, function (MockInterface $mock) use ($url) {
+            $mock->shouldReceive('send')
+                ->with(
+                    \Mockery::type('string'),
+                    Request::METHOD_GET,
+                    \Mockery::type('array'),
+                    \Mockery::type('array')
+                )
+                ->once()
+                ->andReturn(collect([]));
+        });
 
         $response = $this->get($url);
 
@@ -53,28 +69,19 @@ class BlogControllerTest extends TestCaseRemote
     {
         $id = 1;
 
-        $mockery = \Mockery::mock(Transport::class)
-            ->shouldAllowMockingProtectedMethods()
-            ->makePartial();
+        $url = $this->prepareUrl('/api/v2/b2b' . ApiMethods::API_METHOD_GET_BLOG . '?client_id=' . Uuid::uuid4() . '&signature=1', ['id' => $id]);
 
-        $url = $this->prepareUrl('/api/v2/b2b' . ApiMethods::API_METHOD_GET_BLOG, ['id' => $id]);
-        $expectations = $mockery
-            ->shouldReceive('sendRequest')
-            ->with(
-                $url,
-                Request::METHOD_GET,
-                \Mockery::type('array'),
-                \Mockery::type('array')
-            )
-            ->once()
-            ->andReturn(json_encode([]));
-
-        /** @var MockInterface|Transport $mock */
-        $mock = $expectations->getMock();
-
-        $mock->setBaseUrl('')->setClientId('')->setSecretId('');
-
-        $this->instance(ITransport::class, $mock);
+        $this->mock(ITransport::class, function (MockInterface $mock) use ($url) {
+            $mock->shouldReceive('send')
+                ->with(
+                    \Mockery::type('string'),
+                    Request::METHOD_GET,
+                    \Mockery::type('array'),
+                    \Mockery::type('array')
+                )
+                ->once()
+                ->andReturn(collect([]));
+        });
 
         $response = $this->get($url);
 
@@ -88,30 +95,21 @@ class BlogControllerTest extends TestCaseRemote
     {
         $id = 1;
 
-        $mockery = \Mockery::mock(Transport::class)
-            ->shouldAllowMockingProtectedMethods()
-            ->makePartial();
+        $url = $this->prepareUrl('/api/v2/b2b' . ApiMethods::API_METHOD_GET_BLOG . '?client_id=' . Uuid::uuid4() . '&signature=1', ['id' => $id]);
 
-        $url = $this->prepareUrl('/api/v2/b2b' . ApiMethods::API_METHOD_GET_BLOG, ['id' => $id]);
-        $expectations = $mockery
-            ->shouldReceive('sendRequest')
-            ->with(
-                $url,
-                Request::METHOD_GET,
-                \Mockery::type('array'),
-                \Mockery::type('array')
-            )
-            ->once()
-            ->andThrow(
-                new \Exception('', 404)
-            );
-
-        /** @var MockInterface|Transport $mock */
-        $mock = $expectations->getMock();
-
-        $mock->setBaseUrl('')->setClientId('')->setSecretId('');
-
-        $this->instance(ITransport::class, $mock);
+        $this->mock(ITransport::class, function (MockInterface $mock) use ($url) {
+            $mock->shouldReceive('send')
+                ->with(
+                    \Mockery::type('string'),
+                    Request::METHOD_GET,
+                    \Mockery::type('array'),
+                    \Mockery::type('array')
+                )
+                ->once()
+                ->andThrow(
+                    new \Exception('', 404)
+                );
+        });
 
         $response = $this->get($url);
 
@@ -131,30 +129,19 @@ class BlogControllerTest extends TestCaseRemote
             'type'     => 'blog',
         ];
 
-        $mockery = \Mockery::mock(Transport::class)
-            ->shouldAllowMockingProtectedMethods()
-            ->makePartial();
+        $url = $this->prepareUrl('/api/v2/b2b' . ApiMethods::API_METHOD_STORE_BLOG . '?client_id=' . Uuid::uuid4() . '&signature=1');
 
-        $url = $this->prepareUrl('/api/v2/b2b' . ApiMethods::API_METHOD_STORE_BLOG);
-        $expectations = $mockery
-            ->shouldReceive('sendRequest')
-            ->with(
-                $url,
-                Request::METHOD_POST,
-                \Mockery::on(function ($arg) use ($attributes) {
-                    return \count(array_intersect_assoc($arg, $attributes)) === \count($attributes);
-                }),
-                \Mockery::type('array')
-            )
-            ->once()
-            ->andReturn(json_encode($attributes));
-
-        /** @var MockInterface|Transport $mock */
-        $mock = $expectations->getMock();
-
-        $mock->setBaseUrl('')->setClientId('')->setSecretId('');
-
-        $this->instance(ITransport::class, $mock);
+        $this->mock(ITransport::class, function (MockInterface $mock) use ($url) {
+            $mock->shouldReceive('send')
+                ->with(
+                    \Mockery::type('string'),
+                    Request::METHOD_POST,
+                    \Mockery::type('array'),
+                    \Mockery::type('array')
+                )
+                ->once()
+                ->andReturn(collect([]));
+        });
 
         $response = $this->post($url, $attributes);
 
@@ -174,32 +161,22 @@ class BlogControllerTest extends TestCaseRemote
             'type'     => 'blog',
         ];
 
-        $mockery = \Mockery::mock(Transport::class)
-            ->shouldAllowMockingProtectedMethods()
-            ->makePartial();
 
-        $url = $this->prepareUrl('/api/v2/b2b' . ApiMethods::API_METHOD_STORE_BLOG);
-        $expectations = $mockery
-            ->shouldReceive('sendRequest')
-            ->with(
-                $url,
-                Request::METHOD_POST,
-                \Mockery::on(function ($arg) use ($attributes) {
-                    return \count(array_intersect_assoc($arg, $attributes)) === \count($attributes);
-                }),
-                \Mockery::type('array')
-            )
-            ->once()
-            ->andThrow(
-                new \Exception('error', 400)
-            );
+        $url = $this->prepareUrl('/api/v2/b2b' . ApiMethods::API_METHOD_STORE_BLOG . '?client_id=' . Uuid::uuid4() . '&signature=1');
 
-        /** @var MockInterface|Transport $mock */
-        $mock = $expectations->getMock();
-
-        $mock->setBaseUrl('')->setClientId('')->setSecretId('');
-
-        $this->instance(ITransport::class, $mock);
+        $this->mock(ITransport::class, function (MockInterface $mock) use ($url) {
+            $mock->shouldReceive('send')
+                ->with(
+                    \Mockery::type('string'),
+                    Request::METHOD_POST,
+                    \Mockery::type('array'),
+                    \Mockery::type('array')
+                )
+                ->once()
+                ->andThrow(
+                    new \Exception('', 400)
+                );
+        });
 
         $response = $this->post($url, $attributes);
 
@@ -219,31 +196,19 @@ class BlogControllerTest extends TestCaseRemote
             'uri_code' => 'test-blog',
             'type'     => 'blog',
         ];
+        $url = $this->prepareUrl('/api/v2/b2b' . ApiMethods::API_METHOD_UPDATE_BLOG . '?client_id=' . Uuid::uuid4() . '&signature=1', ['id' => $id]);
 
-        $mockery = \Mockery::mock(Transport::class)
-            ->shouldAllowMockingProtectedMethods()
-            ->makePartial();
-
-        $url = $this->prepareUrl('/api/v2/b2b' . ApiMethods::API_METHOD_UPDATE_BLOG, ['id' => $id]);
-        $expectations = $mockery
-            ->shouldReceive('sendRequest')
-            ->with(
-                $url,
-                Request::METHOD_PATCH,
-                \Mockery::on(function ($arg) use ($attributes) {
-                    return \count(array_intersect_assoc($arg, $attributes)) === \count($attributes);
-                }),
-                \Mockery::type('array')
-            )
-            ->once()
-            ->andReturn(json_encode($attributes));
-
-        /** @var MockInterface|Transport $mock */
-        $mock = $expectations->getMock();
-
-        $mock->setBaseUrl('')->setClientId('')->setSecretId('');
-
-        $this->instance(ITransport::class, $mock);
+        $this->mock(ITransport::class, function (MockInterface $mock) use ($url) {
+            $mock->shouldReceive('send')
+                ->with(
+                    \Mockery::type('string'),
+                    Request::METHOD_PATCH,
+                    \Mockery::type('array'),
+                    \Mockery::type('array')
+                )
+                ->once()
+                ->andReturn(collect([]));
+        });
 
         $response = $this->patch($url, $attributes);
 
@@ -264,32 +229,22 @@ class BlogControllerTest extends TestCaseRemote
             'type'     => 'blog',
         ];
 
-        $mockery = \Mockery::mock(Transport::class)
-            ->shouldAllowMockingProtectedMethods()
-            ->makePartial();
 
-        $url = $this->prepareUrl('/api/v2/b2b' . ApiMethods::API_METHOD_UPDATE_BLOG, ['id' => $id]);
-        $expectations = $mockery
-            ->shouldReceive('sendRequest')
-            ->with(
-                $url,
-                Request::METHOD_PATCH,
-                \Mockery::on(function ($arg) use ($attributes) {
-                    return \count(array_intersect_assoc($arg, $attributes)) === \count($attributes);
-                }),
-                \Mockery::type('array')
-            )
-            ->once()
-            ->andThrow(
-                new \Exception('error', 404)
-            );
+        $url = $this->prepareUrl('/api/v2/b2b' . ApiMethods::API_METHOD_UPDATE_BLOG . '?client_id=' . Uuid::uuid4() . '&signature=1', ['id' => $id]);
 
-        /** @var MockInterface|Transport $mock */
-        $mock = $expectations->getMock();
-
-        $mock->setBaseUrl('')->setClientId('')->setSecretId('');
-
-        $this->instance(ITransport::class, $mock);
+        $this->mock(ITransport::class, function (MockInterface $mock) use ($url) {
+            $mock->shouldReceive('send')
+                ->with(
+                    \Mockery::type('string'),
+                    Request::METHOD_PATCH,
+                    \Mockery::type('array'),
+                    \Mockery::type('array')
+                )
+                ->once()
+                ->andThrow(
+                    new \Exception('', 404)
+                );
+        });
 
         $response = $this->patch($url, $attributes);
 
@@ -304,28 +259,19 @@ class BlogControllerTest extends TestCaseRemote
     {
         $id = 1;
 
-        $mockery = \Mockery::mock(Transport::class)
-            ->shouldAllowMockingProtectedMethods()
-            ->makePartial();
+        $url = $this->prepareUrl('/api/v2/b2b' . ApiMethods::API_METHOD_REMOVE_BLOG . '?client_id=' . Uuid::uuid4() . '&signature=1', ['id' => $id]);
 
-        $url = $this->prepareUrl('/api/v2/b2b' . ApiMethods::API_METHOD_REMOVE_BLOG, ['id' => $id]);
-        $expectations = $mockery
-            ->shouldReceive('sendRequest')
-            ->with(
-                $url,
-                Request::METHOD_DELETE,
-                \Mockery::type('array'),
-                \Mockery::type('array')
-            )
-            ->once()
-            ->andReturn(json_encode([]));
-
-        /** @var MockInterface|Transport $mock */
-        $mock = $expectations->getMock();
-
-        $mock->setBaseUrl('')->setClientId('')->setSecretId('');
-
-        $this->instance(ITransport::class, $mock);
+        $this->mock(ITransport::class, function (MockInterface $mock) use ($url) {
+            $mock->shouldReceive('send')
+                ->with(
+                    \Mockery::type('string'),
+                    Request::METHOD_DELETE,
+                    \Mockery::type('array'),
+                    \Mockery::type('array')
+                )
+                ->once()
+                ->andReturn(collect([]));
+        });
 
         $response = $this->delete($url);
 
@@ -339,30 +285,20 @@ class BlogControllerTest extends TestCaseRemote
     {
         $id = 1;
 
-        $mockery = \Mockery::mock(Transport::class)
-            ->shouldAllowMockingProtectedMethods()
-            ->makePartial();
-
-        $url = $this->prepareUrl('/api/v2/b2b' . ApiMethods::API_METHOD_REMOVE_BLOG, ['id' => $id]);
-        $expectations = $mockery
-            ->shouldReceive('sendRequest')
-            ->with(
-                $url,
-                Request::METHOD_DELETE,
-                \Mockery::type('array'),
-                \Mockery::type('array')
-            )
-            ->once()
-            ->andThrow(
-                new \Exception('error', 404)
-            );
-
-        /** @var MockInterface|Transport $mock */
-        $mock = $expectations->getMock();
-
-        $mock->setBaseUrl('')->setClientId('')->setSecretId('');
-
-        $this->instance(ITransport::class, $mock);
+        $url = $this->prepareUrl('/api/v2/b2b' . ApiMethods::API_METHOD_REMOVE_BLOG . '?client_id=' . Uuid::uuid4() . '&signature=1', ['id' => $id]);
+        $this->mock(ITransport::class, function (MockInterface $mock) use ($url) {
+            $mock->shouldReceive('send')
+                ->with(
+                    \Mockery::type('string'),
+                    Request::METHOD_DELETE,
+                    \Mockery::type('array'),
+                    \Mockery::type('array')
+                )
+                ->once()
+                ->andThrow(
+                    new \Exception('', 404)
+                );;
+        });
 
         $response = $this->delete($url);
 
