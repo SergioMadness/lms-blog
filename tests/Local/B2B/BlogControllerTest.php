@@ -1,10 +1,15 @@
 <?php namespace professionalweb\LMS\Blog\Tests\Local\B2B;
 
+use Ramsey\Uuid\Uuid;
 use Mockery\MockInterface;
 use professionalweb\LMS\Blog\Models\Blog;
 use professionalweb\LMS\Blog\Tests\TestCase;
+use professionalweb\LMS\SAAS\Models\WebSite;
+use professionalweb\LMS\SAAS\Models\APIClient;
 use professionalweb\LMS\Common\Interfaces\WithPagination;
+use professionalweb\LMS\Common\Interfaces\Services\DataSigner;
 use professionalweb\LMS\Blog\Interfaces\Repositories\BlogRepository;
+use professionalweb\LMS\SAAS\Interfaces\Repositories\ClientRepository;
 
 /**
  * Check blog controller
@@ -22,6 +27,21 @@ class BlogControllerTest extends TestCase
         parent::setUp();
 
         $this->blogMock = new Blog();
+
+        $clientModel = new APIClient();
+        $clientModel->key = 'test';
+        $clientModel->website = new WebSite();
+
+        $this->mock(ClientRepository::class, function (MockInterface $mock) use ($clientModel) {
+            $mock->shouldReceive('model')
+                ->once()
+                ->andReturn($clientModel);
+        });
+        $this->mock(DataSigner::class, function (MockInterface $mock) use ($clientModel) {
+            $mock->shouldReceive('validate')
+                ->once()
+                ->andReturnTrue();
+        });
     }
 
     /**
@@ -36,7 +56,7 @@ class BlogControllerTest extends TestCase
                 ->andReturn(collect([]));
         });
 
-        $response = $this->get('/api/v2/b2b/blog');
+        $response = $this->get('/api/v2/b2b/blog?client_id=' . Uuid::uuid4() . '&signature=1');
 
         $this->assertTrue($response->isSuccessful());
     }
@@ -55,7 +75,7 @@ class BlogControllerTest extends TestCase
                 ->andReturn($this->blogMock);
         });
 
-        $response = $this->get('/api/v2/b2b/blog/' . $id);
+        $response = $this->get('/api/v2/b2b/blog/' . $id . '?client_id=' . Uuid::uuid4() . '&signature=1');
 
         $this->assertTrue($response->isSuccessful());
     }
@@ -74,7 +94,7 @@ class BlogControllerTest extends TestCase
                 ->andReturn(null);
         });
 
-        $response = $this->get('/api/v2/b2b/blog/' . $id);
+        $response = $this->get('/api/v2/b2b/blog/' . $id . '?client_id=' . Uuid::uuid4() . '&signature=1');
 
         $this->assertEquals(404, $response->getStatusCode());
     }
@@ -94,10 +114,10 @@ class BlogControllerTest extends TestCase
 
         $this->mock(BlogRepository::class, function (MockInterface $mock) {
             $mock->shouldReceive('create')->once()->andReturn($this->blogMock);
-            $mock->shouldReceive('save')->once()->andReturn($this->blogMock);
+            $mock->shouldReceive('save')->once()->andReturnTrue();
         });
 
-        $response = $this->post('/api/v2/b2b/blog', $attributes);
+        $response = $this->post('/api/v2/b2b/blog?client_id=' . Uuid::uuid4() . '&signature=1', $attributes);
 
         $this->assertTrue($response->isSuccessful());
     }
@@ -117,12 +137,12 @@ class BlogControllerTest extends TestCase
         ];
 
         $this->mock(BlogRepository::class, function (MockInterface $mock) {
-            $mock->shouldReceive('save')->once()->andReturn($this->blogMock);
+            $mock->shouldReceive('save')->once()->andReturnTrue();
             $mock->shouldReceive('model')->once()->andReturn($this->blogMock);
             $mock->shouldReceive('fill')->once()->andReturn($this->blogMock);
         });
 
-        $response = $this->patch('/api/v2/b2b/blog/' . $id, $attributes);
+        $response = $this->patch('/api/v2/b2b/blog/' . $id . '?client_id=' . Uuid::uuid4() . '&signature=1', $attributes);
 
         $this->assertTrue($response->isSuccessful());
     }
@@ -147,7 +167,7 @@ class BlogControllerTest extends TestCase
             $mock->shouldReceive('fill')->never();
         });
 
-        $response = $this->patch('/api/v2/b2b/blog/' . $id, $attributes);
+        $response = $this->patch('/api/v2/b2b/blog/' . $id . '?client_id=' . Uuid::uuid4() . '&signature=1', $attributes);
 
         $this->assertEquals(404, $response->getStatusCode());
     }
@@ -164,7 +184,7 @@ class BlogControllerTest extends TestCase
             $mock->shouldReceive('model')->once()->andReturn($this->blogMock);
         });
 
-        $response = $this->delete('/api/v2/b2b/blog/' . $id);
+        $response = $this->delete('/api/v2/b2b/blog/' . $id . '?client_id=' . Uuid::uuid4() . '&signature=1');
 
         $this->assertTrue($response->isSuccessful());
     }
@@ -181,7 +201,7 @@ class BlogControllerTest extends TestCase
             $mock->shouldReceive('model')->once()->andReturn(null);
         });
 
-        $response = $this->delete('/api/v2/b2b/blog/' . $id);
+        $response = $this->delete('/api/v2/b2b/blog/' . $id . '?client_id=' . Uuid::uuid4() . '&signature=1');
 
         $this->assertEquals(404, $response->getStatusCode());
     }
