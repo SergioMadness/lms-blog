@@ -41,5 +41,5 @@ class Blog extends UUIDModel
         'deleted_at',
     ];
 
-    protected $table = 'campus_knowledge';
+    protected $table = 'topics';
 }
