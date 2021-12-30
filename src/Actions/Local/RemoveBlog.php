@@ -1,13 +1,13 @@
-<?php namespace professionalweb\LMS\Blog\Actions\Local;
+<?php namespace professionalweb\lms\Blog\Actions\Local;
 
-use professionalweb\LMS\Blog\Traits\UseBlogRepository;
+use professionalweb\lms\Blog\Traits\UseBlogRepository;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use professionalweb\LMS\Blog\Interfaces\Repositories\BlogRepository;
-use professionalweb\LMS\Blog\Interfaces\Actions\RemoveBlog as IRemoveBlog;
+use professionalweb\lms\Blog\Interfaces\Repositories\BlogRepository;
+use professionalweb\lms\Blog\Interfaces\Actions\RemoveBlog as IRemoveBlog;
 
 /**
  * Action to remove blog
- * @package professionalweb\LMS\Blog\Actions\Local
+ * @package professionalweb\lms\Blog\Actions\Local
  */
 class RemoveBlog implements IRemoveBlog
 {

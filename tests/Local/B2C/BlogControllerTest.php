@@ -1,14 +1,14 @@
-<?php namespace professionalweb\LMS\Blog\Tests\Local\B2C;
+<?php namespace professionalweb\lms\Blog\Tests\Local\B2C;
 
 use Mockery\MockInterface;
-use professionalweb\LMS\Blog\Models\Blog;
-use professionalweb\LMS\Blog\Tests\TestCase;
-use professionalweb\LMS\Common\Interfaces\WithPagination;
-use professionalweb\LMS\Blog\Interfaces\Repositories\BlogRepository;
+use professionalweb\lms\Blog\Models\Blog;
+use professionalweb\lms\Blog\Tests\TestCase;
+use professionalweb\lms\Common\Interfaces\WithPagination;
+use professionalweb\lms\Blog\Interfaces\Repositories\BlogRepository;
 
 /**
  * Check blog controller
- * @package professionalweb\LMS\Blog\Tests\Local\B2C
+ * @package professionalweb\lms\Blog\Tests\Local\B2C
  */
 class BlogControllerTest extends TestCase
 {

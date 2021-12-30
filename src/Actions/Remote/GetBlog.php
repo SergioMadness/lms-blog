@@ -1,10 +1,10 @@
-<?php namespace professionalweb\LMS\Blog\Actions\Remote;
+<?php namespace professionalweb\lms\Blog\Actions\Remote;
 
-use professionalweb\LMS\Blog\Interfaces\Actions\GetBlog as IGetBlog;
+use professionalweb\lms\Blog\Interfaces\Actions\GetBlog as IGetBlog;
 
 /**
  * Action to get blog
- * @package professionalweb\LMS\Blog\Actions\Remote
+ * @package professionalweb\lms\Blog\Actions\Remote
  */
 class GetBlog extends StoreBlog implements IGetBlog
 {

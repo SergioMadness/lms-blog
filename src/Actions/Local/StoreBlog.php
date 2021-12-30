@@ -1,18 +1,18 @@
-<?php namespace professionalweb\LMS\Blog\Actions\Local;
+<?php namespace professionalweb\lms\Blog\Actions\Local;
 
 use Illuminate\Http\Request;
 use Illuminate\Validation\Validator;
 use Symfony\Component\HttpFoundation\Response;
-use professionalweb\LMS\Common\Traits\UseRequest;
-use professionalweb\LMS\Blog\Traits\UseBlogRepository;
-use professionalweb\LMS\Common\Exceptions\ErrorsException;
+use professionalweb\lms\Common\Traits\UseRequest;
+use professionalweb\lms\Blog\Traits\UseBlogRepository;
+use professionalweb\lms\Common\Exceptions\ErrorsException;
 use Illuminate\Support\Facades\Validator as ValidatorFacade;
-use professionalweb\LMS\Blog\Interfaces\Repositories\BlogRepository;
-use professionalweb\LMS\Blog\Interfaces\Actions\StoreBlog as IStoreBlog;
+use professionalweb\lms\Blog\Interfaces\Repositories\BlogRepository;
+use professionalweb\lms\Blog\Interfaces\Actions\StoreBlog as IStoreBlog;
 
 /**
  * Action to store blog
- * @package professionalweb\LMS\Blog\Actions\Local
+ * @package professionalweb\lms\Blog\Actions\Local
  */
 class StoreBlog implements IStoreBlog
 {

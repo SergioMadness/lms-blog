@@ -1,15 +1,15 @@
-<?php namespace professionalweb\LMS\Blog\Actions\Remote;
+<?php namespace professionalweb\lms\Blog\Actions\Remote;
 
 use Illuminate\Http\Request;
-use professionalweb\LMS\Common\Traits\UseModelFiller;
-use professionalweb\LMS\Common\Interfaces\Services\Balancer;
-use professionalweb\LMS\Common\Interfaces\Services\ModelFillService;
-use professionalweb\LMS\Common\Interfaces\Services\RemoteDataService;
-use professionalweb\LMS\Common\Abstractions\RemoteAction as ARemoteAction;
+use professionalweb\lms\Common\Traits\UseModelFiller;
+use professionalweb\lms\Common\Interfaces\Services\Balancer;
+use professionalweb\lms\Common\Interfaces\Services\ModelFillService;
+use professionalweb\lms\Common\Interfaces\Services\RemoteDataService;
+use professionalweb\lms\Common\Abstractions\RemoteAction as ARemoteAction;
 
 /**
  * Class RemoteAction
- * @package professionalweb\LMS\Blog\Actions\Remote
+ * @package professionalweb\lms\Blog\Actions\Remote
  */
 abstract class RemoteAction extends ARemoteAction
 {

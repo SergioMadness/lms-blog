@@ -1,16 +1,16 @@
-<?php namespace professionalweb\LMS\Blog\Actions\Local;
+<?php namespace professionalweb\lms\Blog\Actions\Local;
 
 use Illuminate\Http\Request;
-use professionalweb\LMS\Common\Traits\UseRequest;
-use professionalweb\LMS\Common\Traits\HasPagination;
-use professionalweb\LMS\Blog\Traits\UseBlogRepository;
-use professionalweb\LMS\Common\Interfaces\WithPagination;
-use professionalweb\LMS\Blog\Interfaces\Repositories\BlogRepository;
-use professionalweb\LMS\Blog\Interfaces\Actions\GetBlogList as IGetBlogList;
+use professionalweb\lms\Common\Traits\UseRequest;
+use professionalweb\lms\Common\Traits\HasPagination;
+use professionalweb\lms\Blog\Traits\UseBlogRepository;
+use professionalweb\lms\Common\Interfaces\WithPagination;
+use professionalweb\lms\Blog\Interfaces\Repositories\BlogRepository;
+use professionalweb\lms\Blog\Interfaces\Actions\GetBlogList as IGetBlogList;
 
 /**
  * Action to get blog list
- * @package professionalweb\LMS\Blog\Actions\Local
+ * @package professionalweb\lms\Blog\Actions\Local
  */
 class GetBlogList implements IGetBlogList, WithPagination
 {

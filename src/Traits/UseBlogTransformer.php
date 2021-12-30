@@ -1,10 +1,10 @@
-<?php namespace professionalweb\LMS\Blog\Traits;
+<?php namespace professionalweb\lms\Blog\Traits;
 
-use professionalweb\LMS\Blog\Interfaces\Transformers\BlogTransformer;
+use professionalweb\lms\Blog\Interfaces\Transformers\BlogTransformer;
 
 /**
  * Trait for classes use topic transformer
- * @package professionalweb\LMS\Blog\Traits
+ * @package professionalweb\lms\Blog\Traits
  */
 trait UseBlogTransformer
 {

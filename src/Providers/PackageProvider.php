@@ -1,25 +1,25 @@
-<?php namespace professionalweb\LMS\Blog\Providers;
+<?php namespace professionalweb\lms\Blog\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use professionalweb\LMS\Blog\Actions\Local\GetBlog;
-use professionalweb\LMS\Blog\Actions\Local\StoreBlog;
-use professionalweb\LMS\Blog\Actions\Local\RemoveBlog;
-use professionalweb\LMS\Blog\Actions\Local\UpdateBlog;
-use professionalweb\LMS\Blog\Actions\Local\GetBlogList;
-use professionalweb\LMS\Blog\Repositories\Local\BlogRepository;
-use professionalweb\LMS\Blog\Transformers\BlogTransformer;
-use professionalweb\LMS\Blog\Interfaces\Actions\GetBlog as IGetBlog;
-use professionalweb\LMS\Blog\Actions\Remote\GetBlog as GetBlogRemote;
-use professionalweb\LMS\Blog\Interfaces\Actions\StoreBlog as IStoreBlog;
-use professionalweb\LMS\Blog\Actions\Remote\StoreBlog as StoreBlogRemote;
-use professionalweb\LMS\Blog\Interfaces\Actions\UpdateBlog as IUpdateBlog;
-use professionalweb\LMS\Blog\Interfaces\Actions\RemoveBlog as IRemoveBlog;
-use professionalweb\LMS\Blog\Actions\Remote\RemoveBlog as RemoveBlogRemote;
-use professionalweb\LMS\Blog\Actions\Remote\UpdateBlog as UpdateBlogRemote;
-use professionalweb\LMS\Blog\Interfaces\Actions\GetBlogList as IGetBlogList;
-use professionalweb\LMS\Blog\Actions\Remote\GetBlogList as GetBlogListRemote;
-use professionalweb\LMS\Blog\Interfaces\Repositories\BlogRepository as IBlogRepository;
-use professionalweb\LMS\Blog\Interfaces\Transformers\BlogTransformer as IBlogTransformer;
+use professionalweb\lms\Blog\Actions\Local\GetBlog;
+use professionalweb\lms\Blog\Actions\Local\StoreBlog;
+use professionalweb\lms\Blog\Actions\Local\RemoveBlog;
+use professionalweb\lms\Blog\Actions\Local\UpdateBlog;
+use professionalweb\lms\Blog\Actions\Local\GetBlogList;
+use professionalweb\lms\Blog\Repositories\Local\BlogRepository;
+use professionalweb\lms\Blog\Transformers\BlogTransformer;
+use professionalweb\lms\Blog\Interfaces\Actions\GetBlog as IGetBlog;
+use professionalweb\lms\Blog\Actions\Remote\GetBlog as GetBlogRemote;
+use professionalweb\lms\Blog\Interfaces\Actions\StoreBlog as IStoreBlog;
+use professionalweb\lms\Blog\Actions\Remote\StoreBlog as StoreBlogRemote;
+use professionalweb\lms\Blog\Interfaces\Actions\UpdateBlog as IUpdateBlog;
+use professionalweb\lms\Blog\Interfaces\Actions\RemoveBlog as IRemoveBlog;
+use professionalweb\lms\Blog\Actions\Remote\RemoveBlog as RemoveBlogRemote;
+use professionalweb\lms\Blog\Actions\Remote\UpdateBlog as UpdateBlogRemote;
+use professionalweb\lms\Blog\Interfaces\Actions\GetBlogList as IGetBlogList;
+use professionalweb\lms\Blog\Actions\Remote\GetBlogList as GetBlogListRemote;
+use professionalweb\lms\Blog\Interfaces\Repositories\BlogRepository as IBlogRepository;
+use professionalweb\lms\Blog\Interfaces\Transformers\BlogTransformer as IBlogTransformer;
 
 class PackageProvider extends ServiceProvider
 {

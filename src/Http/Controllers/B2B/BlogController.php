@@ -1,17 +1,17 @@
-<?php namespace professionalweb\LMS\Blog\Http\Controllers\B2B;
+<?php namespace professionalweb\lms\Blog\Http\Controllers\B2B;
 
 use Illuminate\Routing\Controller;
-use professionalweb\LMS\Blog\Traits\UseBlogTransformer;
-use professionalweb\LMS\Blog\Interfaces\Actions\GetBlog;
-use professionalweb\LMS\Blog\Interfaces\Actions\StoreBlog;
-use professionalweb\LMS\Blog\Interfaces\Actions\RemoveBlog;
-use professionalweb\LMS\Blog\Interfaces\Actions\UpdateBlog;
-use professionalweb\LMS\Blog\Interfaces\Actions\GetBlogList;
-use professionalweb\LMS\Blog\Interfaces\Transformers\BlogTransformer;
+use professionalweb\lms\Blog\Traits\UseBlogTransformer;
+use professionalweb\lms\Blog\Interfaces\Actions\GetBlog;
+use professionalweb\lms\Blog\Interfaces\Actions\StoreBlog;
+use professionalweb\lms\Blog\Interfaces\Actions\RemoveBlog;
+use professionalweb\lms\Blog\Interfaces\Actions\UpdateBlog;
+use professionalweb\lms\Blog\Interfaces\Actions\GetBlogList;
+use professionalweb\lms\Blog\Interfaces\Transformers\BlogTransformer;
 
 /**
  * Controller to work with topics
- * @package professionalweb\LMS\Blog\Http\Controllers\B2B
+ * @package professionalweb\lms\Blog\Http\Controllers\B2B
  */
 class BlogController extends Controller
 {

@@ -1,11 +1,11 @@
-<?php namespace professionalweb\LMS\Blog\Models;
+<?php namespace professionalweb\lms\Blog\Models;
 
 use Carbon\Carbon;
-use professionalweb\LMS\Common\Abstractions\UUIDModel;
+use professionalweb\lms\Common\Abstractions\UUIDModel;
 
 /**
  * Class CampusKnowledge
- * @package professionalweb\LMS\Blog\Models
+ * @package professionalweb\lms\Blog\Models
  *
  * @property string $id
  * @property bool   $active

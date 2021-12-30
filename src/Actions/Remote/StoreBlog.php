@@ -1,17 +1,17 @@
-<?php namespace professionalweb\LMS\Blog\Actions\Remote;
+<?php namespace professionalweb\lms\Blog\Actions\Remote;
 
 use Illuminate\Http\Request;
-use professionalweb\LMS\Blog\Traits\UseBlogRepository;
-use professionalweb\LMS\Common\Interfaces\Services\Balancer;
-use professionalweb\LMS\Blog\Interfaces\Repositories\BlogRepository;
-use professionalweb\LMS\Common\Interfaces\Services\ModelFillService;
-use professionalweb\LMS\Common\Interfaces\Services\RemoteDataService;
-use professionalweb\LMS\Blog\Interfaces\Actions\StoreBlog as IStoreBlog;
-use professionalweb\LMS\Blog\Actions\Remote\RemoteAction as ARemoteAction;
+use professionalweb\lms\Blog\Traits\UseBlogRepository;
+use professionalweb\lms\Common\Interfaces\Services\Balancer;
+use professionalweb\lms\Blog\Interfaces\Repositories\BlogRepository;
+use professionalweb\lms\Common\Interfaces\Services\ModelFillService;
+use professionalweb\lms\Common\Interfaces\Services\RemoteDataService;
+use professionalweb\lms\Blog\Interfaces\Actions\StoreBlog as IStoreBlog;
+use professionalweb\lms\Blog\Actions\Remote\RemoteAction as ARemoteAction;
 
 /**
  * Class for remote action
- * @package professionalweb\LMS\Blog\Actions\Remote
+ * @package professionalweb\lms\Blog\Actions\Remote
  */
 class StoreBlog extends ARemoteAction implements IStoreBlog
 {

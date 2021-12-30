@@ -1,11 +1,11 @@
-<?php namespace professionalweb\LMS\Blog\Interfaces\Transformers;
+<?php namespace professionalweb\lms\Blog\Interfaces\Transformers;
 
 use Illuminate\Support\Collection;
-use professionalweb\LMS\Blog\Models\Blog;
+use professionalweb\lms\Blog\Models\Blog;
 
 /**
  * Blog model transformer
- * @package professionalweb\LMS\Blog\Interfaces\Transformers
+ * @package professionalweb\lms\Blog\Interfaces\Transformers
  */
 interface BlogTransformer
 {

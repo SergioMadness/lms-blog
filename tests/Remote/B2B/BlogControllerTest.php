@@ -1,20 +1,20 @@
-<?php namespace professionalweb\LMS\Blog\Tests\Remote\B2B;
+<?php namespace professionalweb\lms\Blog\Tests\Remote\B2B;
 
 use Ramsey\Uuid\Uuid;
 use Mockery\MockInterface;
 use Illuminate\Http\Request;
-use professionalweb\LMS\SAAS\Models\WebSite;
-use professionalweb\LMS\SAAS\Models\APIClient;
-use professionalweb\LMS\Blog\Tests\TestCaseRemote;
-use professionalweb\LMS\Common\Services\Transport;
-use professionalweb\LMS\Blog\Interfaces\ApiMethods;
-use professionalweb\LMS\Common\Interfaces\Services\DataSigner;
-use professionalweb\LMS\SAAS\Interfaces\Repositories\ClientRepository;
-use professionalweb\LMS\Common\Interfaces\Services\Transport as ITransport;
+use professionalweb\lms\SAAS\Models\WebSite;
+use professionalweb\lms\SAAS\Models\APIClient;
+use professionalweb\lms\Blog\Tests\TestCaseRemote;
+use professionalweb\lms\Common\Services\Transport;
+use professionalweb\lms\Blog\Interfaces\ApiMethods;
+use professionalweb\lms\Common\Interfaces\Services\DataSigner;
+use professionalweb\lms\SAAS\Interfaces\Repositories\ClientRepository;
+use professionalweb\lms\Common\Interfaces\Services\Transport as ITransport;
 
 /**
  * Check blog controller
- * @package professionalweb\LMS\Blog\Tests\Remote\B2B
+ * @package professionalweb\lms\Blog\Tests\Remote\B2B
  */
 class BlogControllerTest extends TestCaseRemote
 {
