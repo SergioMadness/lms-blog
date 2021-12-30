@@ -39,7 +39,7 @@
     "classmap": [
     ],
     "psr-4": {
-      "professionalweb\\LMS\\Blog\\": "src/"
+      "professionalweb\\lms\\Blog\\": "src/"
     }
   },
   "autoload-dev": {
@@ -47,13 +47,13 @@
       "tests/"
     ],
     "psr-4": {
-      "professionalweb\\LMS\\Blog\\Tests\\": "tests/"
+      "professionalweb\\lms\\Blog\\Tests\\": "tests/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "professionalweb\\LMS\\Blog\\Providers\\PackageProvider"
+        "professionalweb\\lms\\Blog\\Providers\\PackageProvider"
       ]
     }
   }
