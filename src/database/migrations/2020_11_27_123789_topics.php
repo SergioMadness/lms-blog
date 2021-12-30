@@ -15,6 +15,7 @@ class Topics extends Migration
     {
         Schema::create('topics', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->string('uri_code');
             $table->boolean('active')->default(false);
             $table->uuid('cover_id')->nullable();
             $table->integer('user_id')->nullable();
