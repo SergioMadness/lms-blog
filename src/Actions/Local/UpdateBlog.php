@@ -1,20 +1,20 @@
-<?php namespace professionalweb\LMS\Blog\Actions\Local;
+<?php namespace professionalweb\lms\Blog\Actions\Local;
 
 use Illuminate\Http\Request;
 use Illuminate\Validation\Validator;
-use professionalweb\LMS\Blog\Models\Blog;
+use professionalweb\lms\Blog\Models\Blog;
 use Symfony\Component\HttpFoundation\Response;
-use professionalweb\LMS\Common\Traits\UseRequest;
-use professionalweb\LMS\Blog\Traits\UseBlogRepository;
-use professionalweb\LMS\Common\Exceptions\ErrorsException;
+use professionalweb\lms\Common\Traits\UseRequest;
+use professionalweb\lms\Blog\Traits\UseBlogRepository;
+use professionalweb\lms\Common\Exceptions\ErrorsException;
 use Illuminate\Support\Facades\Validator as ValidatorFacade;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use professionalweb\LMS\Blog\Interfaces\Repositories\BlogRepository;
-use professionalweb\LMS\Blog\Interfaces\Actions\UpdateBlog as IUpdateBlog;
+use professionalweb\lms\Blog\Interfaces\Repositories\BlogRepository;
+use professionalweb\lms\Blog\Interfaces\Actions\UpdateBlog as IUpdateBlog;
 
 /**
  * Action to update blog
- * @package professionalweb\LMS\Blog\Actions\Local
+ * @package professionalweb\lms\Blog\Actions\Local
  */
 class UpdateBlog implements IUpdateBlog
 {

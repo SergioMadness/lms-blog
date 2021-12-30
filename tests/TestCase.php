@@ -1,14 +1,14 @@
-<?php namespace professionalweb\LMS\Blog\Tests;
+<?php namespace professionalweb\lms\Blog\Tests;
 
 use Illuminate\Contracts\Debug\ExceptionHandler;
-use professionalweb\LMS\Common\Exceptions\Handler;
-use professionalweb\LMS\Blog\Providers\PackageProvider;
-use professionalweb\LMS\SAAS\Providers\PackageProvider as SaasPackageProvider;
-use professionalweb\LMS\Common\Providers\PackageProvider as CommonPackageProvider;
+use professionalweb\lms\Common\Exceptions\Handler;
+use professionalweb\lms\Blog\Providers\PackageProvider;
+use professionalweb\lms\SAAS\Providers\PackageProvider as SaasPackageProvider;
+use professionalweb\lms\Common\Providers\PackageProvider as CommonPackageProvider;
 
 /**
  * Base test case
- * @package professionalweb\LMS\Blog\Tests
+ * @package professionalweb\lms\Blog\Tests
  */
 class TestCase extends \Orchestra\Testbench\TestCase
 {

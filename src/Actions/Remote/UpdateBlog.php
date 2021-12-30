@@ -1,10 +1,10 @@
-<?php namespace professionalweb\LMS\Blog\Actions\Remote;
+<?php namespace professionalweb\lms\Blog\Actions\Remote;
 
-use professionalweb\LMS\Blog\Interfaces\Actions\UpdateBlog as IUpdateBlog;
+use professionalweb\lms\Blog\Interfaces\Actions\UpdateBlog as IUpdateBlog;
 
 /**
  * Action to update blog
- * @package professionalweb\LMS\Blog\Actions\Remote
+ * @package professionalweb\lms\Blog\Actions\Remote
  */
 class UpdateBlog extends StoreBlog implements IUpdateBlog
 {

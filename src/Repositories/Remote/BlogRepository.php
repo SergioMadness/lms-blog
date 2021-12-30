@@ -1,15 +1,15 @@
-<?php namespace professionalweb\LMS\Blog\Repositories\Remote;
+<?php namespace professionalweb\lms\Blog\Repositories\Remote;
 
-use professionalweb\LMS\Blog\Models\Blog;
-use professionalweb\LMS\Blog\Interfaces\ApiMethods;
-use professionalweb\LMS\Common\Interfaces\Services\Balancer;
-use professionalweb\LMS\Common\Interfaces\Services\ModelFillService;
-use professionalweb\LMS\Common\Interfaces\Services\RemoteDataService;
-use professionalweb\LMS\Blog\Interfaces\Repositories\BlogRepository as IBlogRepository;
+use professionalweb\lms\Blog\Models\Blog;
+use professionalweb\lms\Blog\Interfaces\ApiMethods;
+use professionalweb\lms\Common\Interfaces\Services\Balancer;
+use professionalweb\lms\Common\Interfaces\Services\ModelFillService;
+use professionalweb\lms\Common\Interfaces\Services\RemoteDataService;
+use professionalweb\lms\Blog\Interfaces\Repositories\BlogRepository as IBlogRepository;
 
 /**
  * Topics repository
- * @package professionalweb\LMS\Blog\Repositories\Remote
+ * @package professionalweb\lms\Blog\Repositories\Remote
  */
 class BlogRepository extends BaseRemoteRepository implements IBlogRepository
 {

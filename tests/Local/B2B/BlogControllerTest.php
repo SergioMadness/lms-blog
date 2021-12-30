@@ -1,19 +1,19 @@
-<?php namespace professionalweb\LMS\Blog\Tests\Local\B2B;
+<?php namespace professionalweb\lms\Blog\Tests\Local\B2B;
 
 use Ramsey\Uuid\Uuid;
 use Mockery\MockInterface;
-use professionalweb\LMS\Blog\Models\Blog;
-use professionalweb\LMS\Blog\Tests\TestCase;
-use professionalweb\LMS\SAAS\Models\WebSite;
-use professionalweb\LMS\SAAS\Models\APIClient;
-use professionalweb\LMS\Common\Interfaces\WithPagination;
-use professionalweb\LMS\Common\Interfaces\Services\DataSigner;
-use professionalweb\LMS\Blog\Interfaces\Repositories\BlogRepository;
-use professionalweb\LMS\SAAS\Interfaces\Repositories\ClientRepository;
+use professionalweb\lms\Blog\Models\Blog;
+use professionalweb\lms\Blog\Tests\TestCase;
+use professionalweb\lms\SAAS\Models\WebSite;
+use professionalweb\lms\SAAS\Models\APIClient;
+use professionalweb\lms\Common\Interfaces\WithPagination;
+use professionalweb\lms\Common\Interfaces\Services\DataSigner;
+use professionalweb\lms\Blog\Interfaces\Repositories\BlogRepository;
+use professionalweb\lms\SAAS\Interfaces\Repositories\ClientRepository;
 
 /**
  * Check blog controller
- * @package professionalweb\LMS\Blog\Tests\Local\B2B
+ * @package professionalweb\lms\Blog\Tests\Local\B2B
  */
 class BlogControllerTest extends TestCase
 {

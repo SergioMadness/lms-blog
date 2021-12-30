@@ -1,12 +1,12 @@
-<?php namespace professionalweb\LMS\Blog\Transformers;
+<?php namespace professionalweb\lms\Blog\Transformers;
 
 use Illuminate\Support\Collection;
-use professionalweb\LMS\Blog\Models\Blog;
-use professionalweb\LMS\Blog\Interfaces\Transformers\BlogTransformer as IBlogTransformer;
+use professionalweb\lms\Blog\Models\Blog;
+use professionalweb\lms\Blog\Interfaces\Transformers\BlogTransformer as IBlogTransformer;
 
 /**
  * Transformer to transform blog topic
- * @package professionalweb\LMS\Blog\Transformers
+ * @package professionalweb\lms\Blog\Transformers
  */
 class BlogTransformer implements IBlogTransformer
 {

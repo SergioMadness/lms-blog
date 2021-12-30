@@ -1,10 +1,10 @@
-<?php namespace professionalweb\LMS\Blog\Repositories\Remote;
+<?php namespace professionalweb\lms\Blog\Repositories\Remote;
 
-use professionalweb\LMS\Common\Abstractions\BaseRemoteRepository as CommonBaseRemoteRepository;
+use professionalweb\lms\Common\Abstractions\BaseRemoteRepository as CommonBaseRemoteRepository;
 
 /**
  * Base repository to work with remote services
- * @package professionalweb\LMS\Blog\Repositories\Remote
+ * @package professionalweb\lms\Blog\Repositories\Remote
  */
 abstract class BaseRemoteRepository extends CommonBaseRemoteRepository
 {

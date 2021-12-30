@@ -1,13 +1,13 @@
-<?php namespace professionalweb\LMS\Blog\Actions\Local;
+<?php namespace professionalweb\lms\Blog\Actions\Local;
 
-use professionalweb\LMS\Blog\Traits\UseBlogRepository;
+use professionalweb\lms\Blog\Traits\UseBlogRepository;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use professionalweb\LMS\Blog\Interfaces\Actions\GetBlog as IGetBlog;
-use professionalweb\LMS\Blog\Interfaces\Repositories\BlogRepository;
+use professionalweb\lms\Blog\Interfaces\Actions\GetBlog as IGetBlog;
+use professionalweb\lms\Blog\Interfaces\Repositories\BlogRepository;
 
 /**
  * Action to get blog
- * @package professionalweb\LMS\Blog\Actions\Local
+ * @package professionalweb\lms\Blog\Actions\Local
  */
 class GetBlog implements IGetBlog
 {

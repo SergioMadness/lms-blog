@@ -1,12 +1,12 @@
-<?php namespace professionalweb\LMS\Blog\Interfaces\Repositories;
+<?php namespace professionalweb\lms\Blog\Interfaces\Repositories;
 
 use Illuminate\Support\Collection;
-use professionalweb\LMS\Blog\Models\Blog;
-use professionalweb\LMS\Common\Interfaces\Repositories\Repository;
+use professionalweb\lms\Blog\Models\Blog;
+use professionalweb\lms\Common\Interfaces\Repositories\Repository;
 
 /**
  * Interface for topics repository
- * @package professionalweb\LMS\Blog\Interfaces\Repositories
+ * @package professionalweb\lms\Blog\Interfaces\Repositories
  *
  * @method Blog create(array $attributes = [])
  * @method Blog save(Blog $model)

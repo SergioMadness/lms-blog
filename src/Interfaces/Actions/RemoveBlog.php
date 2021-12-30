@@ -1,10 +1,10 @@
-<?php namespace professionalweb\LMS\Blog\Interfaces\Actions;
+<?php namespace professionalweb\lms\Blog\Interfaces\Actions;
 
-use professionalweb\LMS\Common\Interfaces\Action;
+use professionalweb\lms\Common\Interfaces\Action;
 
 /**
  * Interface for action to remove blog
- * @package professionalweb\LMS\Blog\Interfaces\Actions
+ * @package professionalweb\lms\Blog\Interfaces\Actions
  */
 interface RemoveBlog extends Action
 {

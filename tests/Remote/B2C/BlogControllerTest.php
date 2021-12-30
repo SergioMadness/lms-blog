@@ -1,15 +1,15 @@
-<?php namespace professionalweb\LMS\Blog\Tests\Remote\B2C;
+<?php namespace professionalweb\lms\Blog\Tests\Remote\B2C;
 
 use Mockery\MockInterface;
 use Illuminate\Http\Request;
-use professionalweb\LMS\Blog\Tests\TestCaseRemote;
-use professionalweb\LMS\Common\Services\Transport;
-use professionalweb\LMS\Blog\Interfaces\ApiMethods;
-use professionalweb\LMS\Common\Interfaces\Services\Transport as ITransport;
+use professionalweb\lms\Blog\Tests\TestCaseRemote;
+use professionalweb\lms\Common\Services\Transport;
+use professionalweb\lms\Blog\Interfaces\ApiMethods;
+use professionalweb\lms\Common\Interfaces\Services\Transport as ITransport;
 
 /**
  * Check news controller
- * @package professionalweb\LMS\Blog\Tests\Remote\B2C
+ * @package professionalweb\lms\Blog\Tests\Remote\B2C
  */
 class BlogControllerTest extends TestCaseRemote
 {

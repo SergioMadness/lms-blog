@@ -1,10 +1,10 @@
-<?php namespace professionalweb\LMS\Blog\Traits;
+<?php namespace professionalweb\lms\Blog\Traits;
 
-use professionalweb\LMS\Blog\Interfaces\Repositories\BlogRepository;
+use professionalweb\lms\Blog\Interfaces\Repositories\BlogRepository;
 
 /**
  * Trait for classes use blog repository
- * @package professionalweb\LMS\Blog\Traits
+ * @package professionalweb\lms\Blog\Traits
  */
 trait UseBlogRepository
 {

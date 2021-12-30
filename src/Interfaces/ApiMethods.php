@@ -1,4 +1,4 @@
-<?php namespace professionalweb\LMS\Blog\Interfaces;
+<?php namespace professionalweb\lms\Blog\Interfaces;
 
 interface ApiMethods
 {

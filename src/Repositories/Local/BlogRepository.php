@@ -1,12 +1,12 @@
-<?php namespace professionalweb\LMS\Blog\Repositories\Local;
+<?php namespace professionalweb\lms\Blog\Repositories\Local;
 
-use professionalweb\LMS\Blog\Models\Blog;
-use professionalweb\LMS\Common\Abstractions\BaseRepository;
-use professionalweb\LMS\Blog\Interfaces\Repositories\BlogRepository as IBlogRepository;
+use professionalweb\lms\Blog\Models\Blog;
+use professionalweb\lms\Common\Abstractions\BaseRepository;
+use professionalweb\lms\Blog\Interfaces\Repositories\BlogRepository as IBlogRepository;
 
 /**
  * Topics repository
- * @package professionalweb\LMS\Blog\Repositories
+ * @package professionalweb\lms\Blog\Repositories
  */
 class BlogRepository extends BaseRepository implements IBlogRepository
 {
