@@ -26,4 +26,6 @@ interface ApiMethods
      * Update blog
      */
     public const API_METHOD_UPDATE_BLOG = '/blog/{id}';
+
+
 }

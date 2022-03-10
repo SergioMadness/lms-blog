@@ -19,6 +19,7 @@ class Topics extends Migration
             $table->boolean('active')->default(false);
             $table->uuid('cover_id')->nullable();
             $table->integer('user_id')->nullable();
+            $table->string('uri_code');
             $table->string('title');
             $table->string('note')->nullable();
             $table->text('text');
