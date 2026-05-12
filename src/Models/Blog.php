@@ -1,11 +1,14 @@
-<?php namespace professionalweb\lms\Blog\Models;
+<?php
+
+declare(strict_types=1);
+
+namespace professionalweb\lms\Blog\Models;
 
 use Carbon\Carbon;
 use professionalweb\lms\Common\Abstractions\UUIDModel;
 
 /**
  * Class CampusKnowledge
- * @package professionalweb\lms\Blog\Models
  *
  * @property string $id
  * @property bool   $active
@@ -34,11 +37,8 @@ class Blog extends UUIDModel
     public const PUBLIC = 'public';
     public const AUTHORIZED = 'authorized';
 
-    protected $dates = [
-        'publish_date',
-        'created_at',
-        'updated_at',
-        'deleted_at',
+    protected $casts = [
+        'published_at'=> 'datetime',
     ];
 
     protected $table = 'topics';
