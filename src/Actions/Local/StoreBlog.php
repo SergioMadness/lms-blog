@@ -12,7 +12,6 @@ use professionalweb\lms\Blog\Interfaces\Actions\StoreBlog as IStoreBlog;
 
 /**
  * Action to store blog
- * @package professionalweb\lms\Blog\Actions\Local
  */
 class StoreBlog implements IStoreBlog
 {
@@ -44,10 +43,6 @@ class StoreBlog implements IStoreBlog
 
     /**
      * Get validator
-     *
-     * @param Request $request
-     *
-     * @return Validator
      */
     protected function getValidator(Request $request): Validator
     {

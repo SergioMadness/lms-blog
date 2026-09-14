@@ -11,7 +11,6 @@ use professionalweb\lms\Blog\Interfaces\Actions\GetBlogList as IGetBlogList;
 
 /**
  * Action to get city list from remote service
- * @package professionalweb\lms\Blog\Actions\Remote
  */
 class GetBlogList extends ARemoteAction implements IGetBlogList
 {

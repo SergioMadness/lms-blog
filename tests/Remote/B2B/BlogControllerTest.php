@@ -14,7 +14,6 @@ use professionalweb\lms\Common\Interfaces\Services\Transport as ITransport;
 
 /**
  * Check blog controller
- * @package professionalweb\lms\Blog\Tests\Remote\B2B
  */
 class BlogControllerTest extends TestCaseRemote
 {

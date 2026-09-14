@@ -8,7 +8,9 @@ use professionalweb\lms\Blog\Actions\Local\UpdateBlog;
 use professionalweb\lms\Blog\Actions\Local\GetBlogList;
 use professionalweb\lms\Blog\Repositories\Local\BlogRepository;
 use professionalweb\lms\Blog\Transformers\BlogTransformer;
+use professionalweb\lms\Blog\Services\FileUsage\BlogFileUsageSource;
 use professionalweb\lms\Blog\Interfaces\Actions\GetBlog as IGetBlog;
+use professionalweb\lms\Storage\Interfaces\Services\FileUsageRegistry;
 use professionalweb\lms\Blog\Actions\Remote\GetBlog as GetBlogRemote;
 use professionalweb\lms\Blog\Interfaces\Actions\StoreBlog as IStoreBlog;
 use professionalweb\lms\Blog\Actions\Remote\StoreBlog as StoreBlogRemote;
@@ -28,6 +30,12 @@ class PackageProvider extends ServiceProvider
         $this->loadRoutesFrom(__DIR__ . '/../routes/api.php');
         $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'Blog');
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+
+        // the cover and the pictures of a post are storage files; the source is added only
+        // where the storage module keeps the index of file usages
+        $this->callAfterResolving(FileUsageRegistry::class, static function (FileUsageRegistry $registry): void {
+            $registry->register(BlogFileUsageSource::class);
+        });
     }
 
     public function register(): void

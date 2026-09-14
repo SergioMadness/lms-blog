@@ -7,7 +7,6 @@ use professionalweb\lms\Blog\Interfaces\Repositories\BlogRepository;
 
 /**
  * Action to get blog
- * @package professionalweb\lms\Blog\Actions\Local
  */
 class GetBlog implements IGetBlog
 {
@@ -38,10 +37,6 @@ class GetBlog implements IGetBlog
 
     /**
      * Set blog id
-     *
-     * @param string $id
-     *
-     * @return IGetBlog
      */
     public function setId(string $id): IGetBlog
     {
@@ -52,8 +47,6 @@ class GetBlog implements IGetBlog
 
     /**
      * Get blog id
-     *
-     * @return string
      */
     public function getId(): string
     {

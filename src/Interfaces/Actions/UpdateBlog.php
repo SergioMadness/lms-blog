@@ -4,14 +4,11 @@ use professionalweb\lms\Common\Interfaces\Action;
 
 /**
  * Interface for action to update blog
- * @package professionalweb\lms\Blog\Interfaces\Actions
  */
 interface UpdateBlog extends Action
 {
     /**
      * Set blog id
-     *
-     * @param string $id
      *
      * @return UpdateBlog
      */

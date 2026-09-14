@@ -8,7 +8,6 @@ use professionalweb\lms\Blog\Interfaces\Transformers\BlogTransformer;
 
 /**
  * Controller to work with topics
- * @package professionalweb\lms\Blog\Http\Controllers\B2C
  */
 class BlogController extends Controller
 {
@@ -21,8 +20,6 @@ class BlogController extends Controller
 
     /**
      * Get blog list
-     *
-     * @param GetBlogList $getBlogListAction
      *
      * @return mixed
      */
@@ -37,9 +34,6 @@ class BlogController extends Controller
 
     /**
      * Get single blog
-     *
-     * @param string  $id
-     * @param GetBlog $getBlogAction
      *
      * @return mixed
      */

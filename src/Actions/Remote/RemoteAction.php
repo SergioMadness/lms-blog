@@ -9,7 +9,6 @@ use professionalweb\lms\Common\Abstractions\RemoteAction as ARemoteAction;
 
 /**
  * Class RemoteAction
- * @package professionalweb\lms\Blog\Actions\Remote
  */
 abstract class RemoteAction extends ARemoteAction
 {
@@ -24,8 +23,6 @@ abstract class RemoteAction extends ARemoteAction
 
     /**
      * Method returns services' urls
-     *
-     * @return array
      */
     protected function getServiceUrls(): array
     {

@@ -9,7 +9,6 @@ use professionalweb\lms\Common\Interfaces\Services\Transport as ITransport;
 
 /**
  * Check news controller
- * @package professionalweb\lms\Blog\Tests\Remote\B2C
  */
 class BlogControllerTest extends TestCaseRemote
 {

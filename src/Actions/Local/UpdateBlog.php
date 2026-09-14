@@ -14,7 +14,6 @@ use professionalweb\lms\Blog\Interfaces\Actions\UpdateBlog as IUpdateBlog;
 
 /**
  * Action to update blog
- * @package professionalweb\lms\Blog\Actions\Local
  */
 class UpdateBlog implements IUpdateBlog
 {
@@ -56,10 +55,6 @@ class UpdateBlog implements IUpdateBlog
 
     /**
      * Get validator
-     *
-     * @param Request $request
-     *
-     * @return Validator
      */
     protected function getValidator(Request $request): Validator
     {
@@ -74,10 +69,6 @@ class UpdateBlog implements IUpdateBlog
 
     /**
      * Set blog id
-     *
-     * @param string $id
-     *
-     * @return IUpdateBlog
      */
     public function setId(string $id): IUpdateBlog
     {
@@ -88,8 +79,6 @@ class UpdateBlog implements IUpdateBlog
 
     /**
      * Get blog id
-     *
-     * @return string
      */
     public function getId(): string
     {

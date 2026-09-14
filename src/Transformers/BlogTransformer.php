@@ -6,17 +6,12 @@ use professionalweb\lms\Blog\Interfaces\Transformers\BlogTransformer as IBlogTra
 
 /**
  * Transformer to transform blog topic
- * @package professionalweb\lms\Blog\Transformers
  */
 class BlogTransformer implements IBlogTransformer
 {
 
     /**
      * Transform blog
-     *
-     * @param Blog $blog
-     *
-     * @return array
      */
     public function transform(Blog $blog): array
     {
@@ -32,10 +27,6 @@ class BlogTransformer implements IBlogTransformer
 
     /**
      * Transform blog model to minimum info
-     *
-     * @param Blog $blog
-     *
-     * @return array
      */
     public function transformMinimal(Blog $blog): array
     {
@@ -50,10 +41,6 @@ class BlogTransformer implements IBlogTransformer
 
     /**
      * Transform collection of blog
-     *
-     * @param Collection $collection
-     *
-     * @return Collection
      */
     public function transformCollection(Collection $collection): Collection
     {
@@ -64,10 +51,6 @@ class BlogTransformer implements IBlogTransformer
 
     /**
      * Transform collection of blog (minimum info)
-     *
-     * @param Collection $collection
-     *
-     * @return Collection
      */
     public function transformCollectionMinimal(Collection $collection): Collection
     {

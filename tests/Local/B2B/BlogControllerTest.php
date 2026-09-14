@@ -13,7 +13,6 @@ use professionalweb\lms\SAAS\Interfaces\Repositories\ClientRepository;
 
 /**
  * Check blog controller
- * @package professionalweb\lms\Blog\Tests\Local\B2B
  */
 class BlogControllerTest extends TestCase
 {

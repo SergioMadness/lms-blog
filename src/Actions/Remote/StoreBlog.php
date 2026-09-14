@@ -11,7 +11,6 @@ use professionalweb\lms\Blog\Actions\Remote\RemoteAction as ARemoteAction;
 
 /**
  * Class for remote action
- * @package professionalweb\lms\Blog\Actions\Remote
  */
 class StoreBlog extends ARemoteAction implements IStoreBlog
 {
