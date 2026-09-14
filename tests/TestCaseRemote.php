@@ -8,7 +8,6 @@ use professionalweb\lms\Common\Providers\PackageProvider as LmsCommonPackageProv
 
 /**
  * Base test case
- * @package professionalweb\lms\Dictionary\Tests
  */
 class TestCaseRemote extends \Orchestra\Testbench\TestCase
 {
@@ -56,8 +55,6 @@ class TestCaseRemote extends \Orchestra\Testbench\TestCase
 
     /**
      * Get base domain
-     *
-     * @return string
      */
     protected function getDomain(): string
     {
@@ -67,11 +64,7 @@ class TestCaseRemote extends \Orchestra\Testbench\TestCase
     /**
      * Concat domain and uri
      *
-     * @param string $uri
-     *
-     * @param array  $params
-     *
-     * @return string
+     * @param array<string, mixed>  $params
      */
     protected function prepareUrl(string $uri, array $params = []): string
     {

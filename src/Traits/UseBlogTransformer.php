@@ -4,7 +4,6 @@ use professionalweb\lms\Blog\Interfaces\Transformers\BlogTransformer;
 
 /**
  * Trait for classes use topic transformer
- * @package professionalweb\lms\Blog\Traits
  */
 trait UseBlogTransformer
 {
@@ -13,16 +12,13 @@ trait UseBlogTransformer
      */
     private $blogTransformer;
 
-    /**
-     * @return BlogTransformer
-     */
+    
     public function getBlogTransformer(): BlogTransformer
     {
         return $this->blogTransformer;
     }
 
     /**
-     * @param BlogTransformer $blogTransformer
      *
      * @return $this
      */

@@ -8,7 +8,6 @@ use professionalweb\lms\Common\Providers\PackageProvider as CommonPackageProvide
 
 /**
  * Base test case
- * @package professionalweb\lms\Blog\Tests
  */
 class TestCase extends \Orchestra\Testbench\TestCase
 {

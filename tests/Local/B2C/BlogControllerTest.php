@@ -8,7 +8,6 @@ use professionalweb\lms\Blog\Interfaces\Repositories\BlogRepository;
 
 /**
  * Check blog controller
- * @package professionalweb\lms\Blog\Tests\Local\B2C
  */
 class BlogControllerTest extends TestCase
 {

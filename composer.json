@@ -1,60 +1,75 @@
 {
-  "name": "professionalweb/lms-blog",
-  "description": "LMS blog",
-  "keywords": [
-    "laravel",
-    "professionalweb",
-    "lms",
-    "blog"
-  ],
-  "license": "MIT",
-  "type": "library",
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "git@github.com:SergioMadness/lms-common.git"
-    },
-    {
-      "type": "vcs",
-      "url": "git@github.com:SergioMadness/lms-saas.git"
-    },
-    {
-      "type": "vcs",
-      "url": "git@github.com:SergioMadness/lms-users.git"
-    }
-  ],
-  "require": {
-    "php": ">=8.1",
-    "ext-json": "*",
-    "laravel/framework": "^10.4",
-    "professionalweb/lms-common": "dev-develop",
-    "professionalweb/lms-saas": "dev-develop"
-  },
-  "require-dev": {
-    "orchestra/testbench": "~3.0"
-  },
-  "autoload": {
-    "classmap": [
-    ],
-    "psr-4": {
-      "professionalweb\\lms\\Blog\\": "src/"
-    }
-  },
-  "autoload-dev": {
-    "classmap": [
-      "tests/"
-    ],
-    "psr-4": {
-      "professionalweb\\lms\\Blog\\Tests\\": "tests/"
-    }
-  },
-  "extra": {
-    "laravel": {
-      "providers": [
-        "professionalweb\\lms\\Blog\\Providers\\PackageProvider"
-      ]
-    }
-  }
+    "name":  "professionalweb/lms-blog",
+    "description":  "LMS blog",
+    "keywords":  [
+                     "laravel",
+                     "professionalweb",
+                     "lms",
+                     "blog"
+                 ],
+    "license":  "MIT",
+    "type":  "library",
+    "minimum-stability":  "dev",
+    "prefer-stable":  true,
+    "repositories":  [
+                         {
+                             "type":  "vcs",
+                             "url":  "git@github.com:SergioMadness/lms-common.git"
+                         },
+                         {
+                             "type":  "vcs",
+                             "url":  "git@github.com:SergioMadness/lms-saas.git"
+                         },
+                         {
+                             "type":  "vcs",
+                             "url":  "git@github.com:SergioMadness/lms-users.git"
+                         },
+                         {
+                             "type":  "vcs",
+                             "url":  "git@github.com:SergioMadness/lms-storage.git"
+                         }
+                     ],
+    "require":  {
+                    "php":  ">=8.1",
+                    "ext-json":  "*",
+                    "laravel/framework":  "^10.4",
+                    "professionalweb/lms-common":  "dev-develop",
+                    "professionalweb/lms-saas":  "dev-develop",
+                    "professionalweb/lms-storage":  "dev-develop"
+                },
+    "require-dev":  {
+                        "orchestra/testbench":  "~3.0"
+                    },
+    "autoload":  {
+                     "classmap":  [
+
+                                  ],
+                     "psr-4":  {
+                                   "professionalweb\\lms\\Blog\\":  "src/"
+                               }
+                 },
+    "autoload-dev":  {
+                         "classmap":  [
+                                          "tests/"
+                                      ],
+                         "psr-4":  {
+                                       "professionalweb\\lms\\Blog\\Tests\\":  "tests/"
+                                   }
+                     },
+    "extra":  {
+                  "laravel":  {
+                                  "providers":  [
+                                                    "professionalweb\\lms\\Blog\\Providers\\PackageProvider"
+                                                ]
+                              }
+              },
+    "scripts":  {
+                    "test":  "@php -r \"function has_test_files($dir) { if (!is_dir($dir)) { return false; } foreach (new RecursiveIteratorIterator(new RecursiveDirectoryIterator($dir, FilesystemIterator::SKIP_DOTS)) as $file) { if ($file->isFile() && preg_match('/Test\\.php$/', $file->getFilename())) { return true; } } return false; } if (!file_exists('phpunit.xml') && !file_exists('phpunit.xml.dist') && !has_test_files('tests')) { echo 'No PHPUnit test suite configured; skipping tests.'.PHP_EOL; exit(0); } if (!file_exists('vendor/bin/phpunit')) { echo 'PHPUnit executable was not found. Run composer install before committing.'.PHP_EOL; exit(1); } $php = getenv('LOCALAPPDATA') ? getenv('LOCALAPPDATA').'/Programs/PHP/current/php.exe' : PHP_BINARY; if (!file_exists($php)) { $php = PHP_BINARY; } passthru(escapeshellarg($php).' vendor/bin/phpunit', $code); exit($code);\"",
+                    "post-install-cmd":  [
+                                             "@php -r \"if (is_dir('.git') || is_file('.git')) { passthru('git config core.hooksPath .githooks'); }\""
+                                         ],
+                    "post-update-cmd":  [
+                                            "@php -r \"if (is_dir('.git') || is_file('.git')) { passthru('git config core.hooksPath .githooks'); }\""
+                                        ]
+                }
 }

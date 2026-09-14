@@ -4,7 +4,6 @@ use professionalweb\lms\Blog\Interfaces\Repositories\BlogRepository;
 
 /**
  * Trait for classes use blog repository
- * @package professionalweb\lms\Blog\Traits
  */
 trait UseBlogRepository
 {
@@ -13,16 +12,13 @@ trait UseBlogRepository
      */
     private $blogRepository;
 
-    /**
-     * @return BlogRepository
-     */
+    
     public function getBlogRepository(): BlogRepository
     {
         return $this->blogRepository;
     }
 
     /**
-     * @param BlogRepository $blogRepository
      *
      * @return $this
      */

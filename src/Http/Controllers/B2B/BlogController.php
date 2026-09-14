@@ -11,7 +11,6 @@ use professionalweb\lms\Blog\Interfaces\Transformers\BlogTransformer;
 
 /**
  * Controller to work with topics
- * @package professionalweb\lms\Blog\Http\Controllers\B2B
  */
 class BlogController extends Controller
 {
@@ -24,8 +23,6 @@ class BlogController extends Controller
 
     /**
      * Get blog list
-     *
-     * @param GetBlogList $getBlogListAction
      *
      * @return mixed
      */
@@ -41,9 +38,6 @@ class BlogController extends Controller
     /**
      * Get single blog
      *
-     * @param int     $id
-     * @param GetBlog $getBlogAction
-     *
      * @return mixed
      */
     public function view(int $id, GetBlog $getBlogAction)
@@ -57,8 +51,6 @@ class BlogController extends Controller
 
     /**
      * Store blog
-     *
-     * @param StoreBlog $storeBlog
      *
      * @return \Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
      */
@@ -74,9 +66,6 @@ class BlogController extends Controller
     /**
      * Update blog model
      *
-     * @param int        $id
-     * @param UpdateBlog $updateBlog
-     *
      * @return \Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
      */
     public function update(int $id, UpdateBlog $updateBlog)
@@ -90,9 +79,6 @@ class BlogController extends Controller
 
     /**
      * Remove blog model
-     *
-     * @param int        $id
-     * @param RemoveBlog $removeBlog
      *
      * @return \Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
      */

@@ -7,7 +7,6 @@ use professionalweb\lms\Blog\Interfaces\Actions\RemoveBlog as IRemoveBlog;
 
 /**
  * Action to remove blog
- * @package professionalweb\lms\Blog\Actions\Local
  */
 class RemoveBlog implements IRemoveBlog
 {
@@ -40,10 +39,6 @@ class RemoveBlog implements IRemoveBlog
 
     /**
      * Set blog id
-     *
-     * @param string $id
-     *
-     * @return IRemoveBlog
      */
     public function setId(string $id): IRemoveBlog
     {
@@ -54,8 +49,6 @@ class RemoveBlog implements IRemoveBlog
 
     /**
      * Get blog id
-     *
-     * @return string
      */
     public function getBlogId(): string
     {

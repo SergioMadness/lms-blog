@@ -9,7 +9,6 @@ use professionalweb\lms\Blog\Interfaces\Repositories\BlogRepository as IBlogRepo
 
 /**
  * Topics repository
- * @package professionalweb\lms\Blog\Repositories\Remote
  */
 class BlogRepository extends BaseRemoteRepository implements IBlogRepository
 {
@@ -23,8 +22,6 @@ class BlogRepository extends BaseRemoteRepository implements IBlogRepository
 
     /**
      * Get list method name
-     *
-     * @return string
      */
     protected function getListMethod(): string
     {
@@ -33,8 +30,6 @@ class BlogRepository extends BaseRemoteRepository implements IBlogRepository
 
     /**
      * Get method to save data
-     *
-     * @return string
      */
     protected function getSaveMethod(): string
     {
@@ -43,8 +38,6 @@ class BlogRepository extends BaseRemoteRepository implements IBlogRepository
 
     /**
      * Get method to remove data
-     *
-     * @return string
      */
     protected function getRemoveMethod(): string
     {
@@ -53,8 +46,6 @@ class BlogRepository extends BaseRemoteRepository implements IBlogRepository
 
     /**
      * Get find method
-     *
-     * @return string
      */
     protected function getFindMethod(): string
     {

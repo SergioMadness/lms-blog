@@ -25,4 +25,11 @@ interface BlogRepository extends Repository
      * Get Blog model by uri_code
      */
     public function getByUri(string $uriCode): ?Blog;
+
+    /**
+     * Walk over every post of the company
+     *
+     * @param callable(Blog): void $callback
+     */
+    public function eachOfCompany(int $companyId, callable $callback): void;
 }

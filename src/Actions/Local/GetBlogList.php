@@ -10,7 +10,6 @@ use professionalweb\lms\Blog\Interfaces\Actions\GetBlogList as IGetBlogList;
 
 /**
  * Action to get blog list
- * @package professionalweb\lms\Blog\Actions\Local
  */
 class GetBlogList implements IGetBlogList, WithPagination
 {
