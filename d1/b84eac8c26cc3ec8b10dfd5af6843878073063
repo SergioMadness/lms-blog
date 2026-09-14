@@ -1,0 +1,35 @@
+src/resources/lang/ru/files.php
+  s_849636d278766e::t_fa9c4215018f2c 1-9
+composer.json
+  s_849636d278766e::t_b766d0b0f76904 26-38
+src/Providers/PackageProvider.php
+  s_849636d278766e::t_f6313e4cd2bb88 11,13,33-38,60
+src/Interfaces/Repositories/BlogRepository.php
+  s_849636d278766e::t_24976c8049fa57 28-35
+src/Services/FileUsage/BlogFileUsageSource.php
+  s_849636d278766e::t_62c6eb506b64ad 1-64
+src/resources/lang/en/files.php
+  s_849636d278766e::t_2714c2b13b6fcb 1-9
+src/resources/lang/cn/files.php
+  s_849636d278766e::t_032304df096837 1-9
+src/resources/lang/by/files.php
+  s_849636d278766e::t_dca70eaf7559c8 1-9
+src/Repositories/Local/BlogRepository.php
+  s_849636d278766e::t_1dd8d0e8ef287a 7,29-45
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "0.0.52",
+  "base_commit_sha": "d1b84eac8c26cc3ec8b10dfd5af6843878073063",
+  "prompts": {},
+  "sessions": {
+    "s_849636d278766e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c3605558-2bfa-4913-914f-cb695fc0b2fb",
+        "model": "claude-opus-5"
+      },
+      "human_author": "SergioMadness <madness.sergio@gmail.com>"
+    }
+  }
+}
