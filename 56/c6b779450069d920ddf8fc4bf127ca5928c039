@@ -1,0 +1,27 @@
+tests/TestCase.php
+  s_81dca4cdce14dc::t_dc2ed44ba26bba 7,20-43
+  s_81dca4cdce14dc::t_a22b0bae7e3182 57
+tests/TestCaseRemote.php
+  s_81dca4cdce14dc::t_a22b0bae7e3182 106
+  s_81dca4cdce14dc::t_dc2ed44ba26bba 7,21-43
+tests/Local/B2B/BlogControllerTest.php
+  s_81dca4cdce14dc::t_cb833df8a313b0 7,14-15,35-36,38,45-56,225
+tests/Remote/B2B/BlogControllerTest.php
+  s_81dca4cdce14dc::t_cb833df8a313b0 6,14-15,29-30,32,39-50,324
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "0.0.52",
+  "base_commit_sha": "56c6b779450069d920ddf8fc4bf127ca5928c039",
+  "prompts": {},
+  "sessions": {
+    "s_81dca4cdce14dc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a09ef8-f5d4-7a80-9fef-e18e95ec7d4f",
+        "model": "gpt-5.5"
+      },
+      "human_author": "SergioMadness <madness.sergio@gmail.com>"
+    }
+  }
+}
