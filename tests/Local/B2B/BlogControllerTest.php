@@ -4,12 +4,15 @@ use Ramsey\Uuid\Uuid;
 use Mockery\MockInterface;
 use professionalweb\lms\Blog\Models\Blog;
 use professionalweb\lms\Blog\Tests\TestCase;
+use professionalweb\lms\SAAS\Models\Company;
 use professionalweb\lms\SAAS\Models\WebSite;
 use professionalweb\lms\SAAS\Models\APIClient;
 use professionalweb\lms\Common\Interfaces\WithPagination;
 use professionalweb\lms\Common\Interfaces\Services\DataSigner;
 use professionalweb\lms\Blog\Interfaces\Repositories\BlogRepository;
 use professionalweb\lms\SAAS\Interfaces\Repositories\ClientRepository;
+use professionalweb\lms\SAAS\Interfaces\Repositories\CompanyRepository;
+use professionalweb\lms\SAAS\Interfaces\Repositories\WebsiteRepository;
 
 /**
  * Check blog controller
@@ -29,12 +32,27 @@ class BlogControllerTest extends TestCase
 
         $clientModel = new APIClient();
         $clientModel->key = 'test';
+        $clientModel->website_id = Uuid::uuid4();
+        $clientModel->company_id = Uuid::uuid4();
         $clientModel->website = new WebSite();
+        $clientModel->company = new Company();
 
         $this->mock(ClientRepository::class, function (MockInterface $mock) use ($clientModel) {
             $mock->shouldReceive('model')
                 ->once()
                 ->andReturn($clientModel);
+        });
+        $this->mock(WebsiteRepository::class, function (MockInterface $mock) use ($clientModel) {
+            $mock->shouldReceive('model')
+                ->once()
+                ->with($clientModel->website_id)
+                ->andReturn($clientModel->website);
+        });
+        $this->mock(CompanyRepository::class, function (MockInterface $mock) use ($clientModel) {
+            $mock->shouldReceive('model')
+                ->once()
+                ->with($clientModel->company_id)
+                ->andReturn($clientModel->company);
         });
         $this->mock(DataSigner::class, function (MockInterface $mock) use ($clientModel) {
             $mock->shouldReceive('validate')
