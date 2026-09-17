@@ -6,13 +6,15 @@ namespace professionalweb\lms\Blog\Repositories\Local;
 
 use Illuminate\Support\Collection;
 use professionalweb\lms\Blog\Models\Blog;
-use professionalweb\lms\Common\Abstractions\BaseRepository;
+use professionalweb\lms\Common\Abstractions\EntityRepository;
 use professionalweb\lms\Blog\Interfaces\Repositories\BlogRepository as IBlogRepository;
 
 /**
  * Topics repository
+ *
+ * Topics belong to a website: they are checked by the website of the request, or by the company without one.
  */
-class BlogRepository extends BaseRepository implements IBlogRepository
+class BlogRepository extends EntityRepository implements IBlogRepository
 {
     public function __construct()
     {
