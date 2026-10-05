@@ -1,0 +1,19 @@
+src/Repositories/Local/BlogRepository.php
+  s_9c66b3aa43c64a::t_ea9da05f58ba6c 9,14-15,17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "0.0.52",
+  "base_commit_sha": "5848e2f47e506ff90dea9c45b168c5ba251b0cba",
+  "prompts": {},
+  "sessions": {
+    "s_9c66b3aa43c64a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "677d4b3c-6c53-4b0a-91b5-3d962713a2c4",
+        "model": "claude-opus-5"
+      },
+      "human_author": "SergioMadness <madness.sergio@gmail.com>"
+    }
+  }
+}
