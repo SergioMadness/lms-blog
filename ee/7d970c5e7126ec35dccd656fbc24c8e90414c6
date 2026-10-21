@@ -1,0 +1,141 @@
+tests/TestCaseRemote.php
+  s_d515e1bea0a521::t_0d22dd99040b44 4-8,24-33
+  s_d515e1bea0a521::t_b52fd2007059b0 20-23,34-35
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "0.0.63",
+  "base_commit_sha": "ee7d970c5e7126ec35dccd656fbc24c8e90414c6",
+  "prompts": {},
+  "sessions": {
+    "s_d515e1bea0a521": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c33b9517-dcfc-46b8-8d8c-ce85e18374cc",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": "SergioMadness <madness.sergio@gmail.com>",
+      "usage": [
+        {
+          "model": "claude-fable-5-1",
+          "input_tokens": 44652,
+          "output_tokens": 1489343,
+          "cache_read_tokens": 525970807,
+          "cache_write_5m_tokens": 0,
+          "cache_write_1h_tokens": 3308901,
+          "assistant_messages": 1547,
+          "turns": 87,
+          "ai_wall_ms": 7467048,
+          "first_ts": "2026-10-20T15:40:16.483Z",
+          "last_ts": "2026-10-21T20:09:21.108Z",
+          "session_total_output_tokens": 1489343
+        }
+      ],
+      "tools": [
+        {
+          "tool": "Bash",
+          "model": "claude-fable-5-1",
+          "calls": 640,
+          "result_chars": 1085639,
+          "result_input_tokens": 19668,
+          "result_cache_write_5m_tokens": 0,
+          "result_cache_write_1h_tokens": 1175791,
+          "call_output_tokens": 611424
+        },
+        {
+          "tool": "Edit",
+          "model": "claude-fable-5-1",
+          "calls": 48,
+          "result_chars": 7362,
+          "result_input_tokens": 1536,
+          "result_cache_write_5m_tokens": 0,
+          "result_cache_write_1h_tokens": 31157,
+          "call_output_tokens": 26763
+        },
+        {
+          "tool": "Grep",
+          "model": "claude-fable-5-1",
+          "calls": 14,
+          "result_chars": 23139,
+          "result_input_tokens": 448,
+          "result_cache_write_5m_tokens": 0,
+          "result_cache_write_1h_tokens": 18684,
+          "call_output_tokens": 7163
+        },
+        {
+          "tool": "ListAgents",
+          "model": "claude-fable-5-1",
+          "calls": 2,
+          "result_chars": 712,
+          "result_input_tokens": 64,
+          "result_cache_write_5m_tokens": 0,
+          "result_cache_write_1h_tokens": 1923,
+          "call_output_tokens": 1548
+        },
+        {
+          "tool": "Monitor",
+          "model": "claude-fable-5-1",
+          "calls": 5,
+          "result_chars": 1510,
+          "result_input_tokens": 160,
+          "result_cache_write_5m_tokens": 0,
+          "result_cache_write_1h_tokens": 2407,
+          "call_output_tokens": 1766
+        },
+        {
+          "tool": "PowerShell",
+          "model": "claude-fable-5-1",
+          "calls": 4,
+          "result_chars": 2496,
+          "result_input_tokens": 128,
+          "result_cache_write_5m_tokens": 0,
+          "result_cache_write_1h_tokens": 4324,
+          "call_output_tokens": 3061
+        },
+        {
+          "tool": "Read",
+          "model": "claude-fable-5-1",
+          "calls": 21,
+          "result_chars": 77021,
+          "result_input_tokens": 672,
+          "result_cache_write_5m_tokens": 0,
+          "result_cache_write_1h_tokens": 44838,
+          "call_output_tokens": 9240
+        },
+        {
+          "tool": "TaskStop",
+          "model": "claude-fable-5-1",
+          "calls": 4,
+          "result_chars": 4970,
+          "result_input_tokens": 96,
+          "result_cache_write_5m_tokens": 0,
+          "result_cache_write_1h_tokens": 3830,
+          "call_output_tokens": 1393
+        },
+        {
+          "tool": "ToolSearch",
+          "model": "claude-fable-5-1",
+          "calls": 3,
+          "result_chars": 0,
+          "result_input_tokens": 96,
+          "result_cache_write_5m_tokens": 0,
+          "result_cache_write_1h_tokens": 5347,
+          "call_output_tokens": 1620
+        },
+        {
+          "tool": "Write",
+          "model": "claude-fable-5-1",
+          "calls": 55,
+          "result_chars": 10606,
+          "result_input_tokens": 1700,
+          "result_cache_write_5m_tokens": 0,
+          "result_cache_write_1h_tokens": 100013,
+          "call_output_tokens": 92981
+        }
+      ],
+      "context_at_start_tokens": 68006,
+      "accepted_lines": 21,
+      "overridden_lines": 0
+    }
+  }
+}
