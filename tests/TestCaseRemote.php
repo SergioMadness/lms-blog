@@ -1,6 +1,11 @@
 <?php namespace professionalweb\lms\Blog\Tests;
 
 use Illuminate\Contracts\Debug\ExceptionHandler;
+use Mockery\MockInterface;
+use professionalweb\lms\SAAS\Models\Company;
+use professionalweb\lms\SAAS\Models\WebSite;
+use professionalweb\lms\SAAS\Interfaces\Repositories\CompanyRepository;
+use professionalweb\lms\SAAS\Interfaces\Repositories\WebsiteRepository;
 use professionalweb\lms\Common\Exceptions\Handler;
 use professionalweb\lms\Blog\Providers\PackageProvider;
 use professionalweb\lms\SAAS\Providers\PackageProvider as SaasPackageProvider;
@@ -12,6 +17,22 @@ use professionalweb\lms\Common\Providers\PackageProvider as LmsCommonPackageProv
  */
 class TestCaseRemote extends \Orchestra\Testbench\TestCase
 {
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        // the "api" group carries B2CAuthMiddleware of lms-saas (the site by the domain) and LastAuthMiddleware: none
+        // of them reaches the database these tests do not have; a test of the B2B API mocks the repositories itself
+        $this->mock(WebsiteRepository::class, static function (MockInterface $mock): void {
+            $mock->shouldReceive('findByDomain')->byDefault()->andReturn(new WebSite());
+            $mock->shouldReceive('model')->byDefault()->andReturn(new WebSite());
+        });
+        $this->mock(CompanyRepository::class, static function (MockInterface $mock): void {
+            $mock->shouldReceive('model')->byDefault()->andReturn(new Company());
+            $mock->shouldReceive('save')->byDefault()->andReturnTrue();
+        });
+    }
+
 
     protected function getPackageProviders($app)
     {
