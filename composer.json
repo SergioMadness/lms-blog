@@ -33,9 +33,9 @@
         "php": ">=8.4",
         "ext-json": "*",
         "laravel/framework": "^10.4 || ^12.0",
-        "professionalweb/lms-common": "dev-upgrade/laravel-12",
-        "professionalweb/lms-saas": "dev-upgrade/laravel-12",
-        "professionalweb/lms-storage": "dev-upgrade/laravel-12"
+        "professionalweb/lms-common": "dev-develop",
+        "professionalweb/lms-saas": "dev-develop",
+        "professionalweb/lms-storage": "dev-develop"
     },
     "require-dev": {
         "orchestra/testbench": "^10.0",
